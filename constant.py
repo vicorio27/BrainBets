@@ -1,0 +1,1 @@
+RETURNING_STATES = {"OK": "OK", "FAIL": "FAIL"}

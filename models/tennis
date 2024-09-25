@@ -1,0 +1,64 @@
+"""
+Match Model
+"""
+## Herencia:
+# class Match(object) hereda de la clase object
+# issubclass(Match, Object) = True
+## Herencia multiple
+# class C(A, B):
+class Match():
+    """
+    Match
+    """
+    ## PARA LOS STATIC
+    ## Si un objeto modifica un atributo de clase,
+    # lo que realmente hace es crear un atributo de instancia
+    # con el mismo nombre que el atributo de clase.
+    # Los atributos de clase son atributos compartidos por todas las instancias de esa clase.
+
+    ## los atributos de datos (atributos) no necesitan ser declarados previamente.
+    # Un objeto los crea del mismo modo en que se crean las variables en Python,
+    # es decir, cuando les asigna un valor por primera vez.
+    def __init__(self, **kwargs):
+        """
+        Constructor.
+        """
+        self.__dict__ = kwargs
+
+    def __str__(self):
+        return self.__class__.__name__
+
+    def __hash__(self):
+        return hash((self.__class__.__name__))
+
+    ##Para la clase Match, Match.serialize(t1) es una función. Sin embargo,
+    # para los objetos de la clase Match, t1.serialize() es un método.
+    #
+    def serialize(self):
+        return self.__dict__
+
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'player', self.player
+        yield 'tournament', self.tournament
+        yield 'surface', self.surface
+        yield 'against_player', self.against_player
+        yield 'set1', self.set1
+        yield 'set2', self.set2
+        yield 'set3', self.set3
+        yield 'association', self.association
+        yield 'winornot1', self.winornot1
+
+    ## A diferencia de los métodos de instancia,
+    # los métodos de clase reciben como argumento cls, que hace referencia a la clase.
+    # Por lo tanto, pueden acceder a la clase pero no a la instancia.
+    @classmethod
+    def play(cls):
+        return 'Método de clase', cls
+
+    ## no aceptan como parámetro ni la instancia ni la clase.
+    # Es por ello por lo que no pueden modificar el estado ni de la clase
+    # ni de la instancia.
+    @staticmethod
+    def get_last_match():
+        return "Método estático"
