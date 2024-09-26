@@ -149,7 +149,7 @@ def list_objects_v2():
 
 
 def put_object():
-    response = client.put_object(
+    response = set.put_object(
         ACL="private"
         | "public-read"
         | "public-read-write"
@@ -157,7 +157,7 @@ def put_object():
         | "aws-exec-read"
         | "bucket-owner-read"
         | "bucket-owner-full-control",
-        Body=b"bytes" | file,
+        Body=b"bytes" | "file",
         Bucket="string",
         CacheControl="string",
         ContentDisposition="string",

@@ -39,10 +39,10 @@ class Match():
 
     def __iter__(self):
         yield 'id', self.id
-        yield 'player', self.player
+        yield 'player', self.player.serialize(self)
         yield 'tournament', self.tournament
         yield 'surface', self.surface
-        yield 'against_player', self.against_player
+        yield 'against_player', self.against_player.serialize(self)
         yield 'set1', self.set1
         yield 'set2', self.set2
         yield 'set3', self.set3
