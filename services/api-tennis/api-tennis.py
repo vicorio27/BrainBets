@@ -73,3 +73,12 @@ def get_H2H(first_player_key: str, second_player_key: str):
     }
     response = get(url=API_TENNIS["API"], query_params=params)
     return response
+
+def ranking(event_type: str):
+    params = {
+        'method': API_TENNIS["METHOD_STANDINGS"],
+        'APIkey': API_TENNIS["APIKEY"],
+        'event_type': event_type, #'ATP' or 'WTA'
+    }
+    response = get(url=API_TENNIS["API"], query_params=params)
+    return response

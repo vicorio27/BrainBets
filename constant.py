@@ -12,5 +12,6 @@ API_TENNIS = {
     "METHOD_GET_TOURNAMENTS": "get_tournaments",
     "METHOD_GET_FIXTURES": "get_fixtures",
     "METHOD_GET_LIVESCORE": "get_livescore",
-    "METHOD_H2H": "get_H2H"
+    "METHOD_H2H": "get_H2H",
+    "METHOD_STANDINGS": "get_standings",
 }
