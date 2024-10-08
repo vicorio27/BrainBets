@@ -6,6 +6,7 @@ from boto3.s3.transfer import ClientError
 logger = logging.getLogger(__name__)
 sqs = boto3.resource("sqs")
 
+
 def create_queue(name, attributes=None):
     """
     Creates an Amazon SQS queue.
@@ -27,6 +28,3 @@ def create_queue(name, attributes=None):
         raise error
     else:
         return queue
-
-
-

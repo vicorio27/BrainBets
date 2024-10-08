@@ -1,8 +1,10 @@
 """
-Event
+Standings
 """
-class Standing():
-    place : str
+
+
+class Standing:
+    place: str
     player: str
     player_key: str
     league: str
@@ -10,7 +12,16 @@ class Standing():
     country: str
     points: str
 
-    def __init__(self, place: str, player: str, player_key: str, league: str, movement: str, country: str, points: str):
+    def __init__(
+        self,
+        place: str,
+        player: str,
+        player_key: str,
+        league: str,
+        movement: str,
+        country: str,
+        points: str,
+    ):
         """
         Constructor.
         """
@@ -33,11 +44,10 @@ class Standing():
         return self.__dict__
 
     def __iter__(self):
-        yield 'place', self.place
-        yield 'player', self.player
-        yield 'player_key', self.player_key
-        yield 'league', self.league
-        yield 'movement', self.movement
-        yield 'country', self.country
-        yield 'points', self.points
-
+        yield "place", self.place
+        yield "player", self.player
+        yield "player_key", self.player_key
+        yield "league", self.league
+        yield "movement", self.movement
+        yield "country", self.country
+        yield "points", self.points

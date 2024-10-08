@@ -1,9 +1,12 @@
 """
 Event
 """
-class Event():
-    event_type_key : str
+
+
+class Event:
+    event_type_key: str
     event_type_type: str
+
     def __init__(self, event_type_key: str, event_type_type: str):
         """
         Constructor.
@@ -22,5 +25,5 @@ class Event():
         return self.__dict__
 
     def __iter__(self):
-        yield 'event_type_key', self.event_type_key
-        yield 'event_type_type', self.event_type_type
+        yield "event_type_key", self.event_type_key
+        yield "event_type_type", self.event_type_type

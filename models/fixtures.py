@@ -1,14 +1,23 @@
 """
 Point
 """
-class Point():
-    number_point : str
-    score: str
-    break_point : str
-    set_point: str
-    match_point : str
 
-    def __init__(self, number_point: str, score: str, break_point: str, set_point: str, match_point: str):
+
+class Point:
+    number_point: str
+    score: str
+    break_point: str
+    set_point: str
+    match_point: str
+
+    def __init__(
+        self,
+        number_point: str,
+        score: str,
+        break_point: str,
+        set_point: str,
+        match_point: str,
+    ):
         """
         Constructor.
         """
@@ -29,26 +38,37 @@ class Point():
         return self.__dict__
 
     def __iter__(self):
-        yield 'number_point', self.number_point
-        yield 'score', self.score
-        yield 'break_point', self.break_point
-        yield 'set_point', self.set_point
-        yield 'match_point', self.match_point
+        yield "number_point", self.number_point
+        yield "score", self.score
+        yield "break_point", self.break_point
+        yield "set_point", self.set_point
+        yield "match_point", self.match_point
 
 
 """
 PointByPoint
 """
-class PointByPoint():
-    set_number : str
-    number_game: str
-    player_served : str
-    serve_winner: str
-    serve_lost : str
-    score: str
-    points : list[Point]
 
-    def __init__(self, set_number: str, number_game: str, player_served: str, serve_winner: str, serve_lost: str, score: str, points: list[Point]):
+
+class PointByPoint:
+    set_number: str
+    number_game: str
+    player_served: str
+    serve_winner: str
+    serve_lost: str
+    score: str
+    points: list[Point]
+
+    def __init__(
+        self,
+        set_number: str,
+        number_game: str,
+        player_served: str,
+        serve_winner: str,
+        serve_lost: str,
+        score: str,
+        points: list[Point],
+    ):
         """
         Constructor.
         """
@@ -71,21 +91,24 @@ class PointByPoint():
         return self.__dict__
 
     def __iter__(self):
-        yield 'set_number', self.set_number
-        yield 'number_game', self.number_game
-        yield 'player_served', self.player_served
-        yield 'serve_winner', self.serve_winner
-        yield 'serve_lost', self.serve_lost
-        yield 'score', self.score
-        yield 'points', self.points
+        yield "set_number", self.set_number
+        yield "number_game", self.number_game
+        yield "player_served", self.player_served
+        yield "serve_winner", self.serve_winner
+        yield "serve_lost", self.serve_lost
+        yield "score", self.score
+        yield "points", self.points
+
 
 """
 Score
 """
-class Score():
-    score_first : str
+
+
+class Score:
+    score_first: str
     score_second: str
-    score_set : str
+    score_set: str
 
     def __init__(self, score_first: str, score_second: str, score_set: str):
         """
@@ -106,29 +129,31 @@ class Score():
         return self.__dict__
 
     def __iter__(self):
-        yield 'score_first', self.score_first
-        yield 'score_second', self.score_second
-        yield 'score_set', self.score_set
+        yield "score_first", self.score_first
+        yield "score_second", self.score_second
+        yield "score_set", self.score_set
 
 
 """
 Fixtures
 """
-class Fixtures():
-    event_key : str
+
+
+class Fixtures:
+    event_key: str
     event_date: str
-    event_time : str
+    event_time: str
     event_first_player: str
-    first_player_key : str
+    first_player_key: str
     event_second_player: str
-    second_player_key : str
+    second_player_key: str
     event_final_result: str
-    event_game_result : str
+    event_game_result: str
     event_serve: str
     event_winner: str
-    event_status : str
+    event_status: str
     event_type_type: str
-    tournament_name : str
+    tournament_name: str
     tournament_key: str
     tournament_round: str
     tournament_season: str
@@ -138,7 +163,6 @@ class Fixtures():
     event_second_player_logo: str
     pointbypoint: list[PointByPoint]
     scores: list[Score]
-
 
     def __init__(self, event_type_key: str, event_type_type: str):
         """
@@ -158,5 +182,5 @@ class Fixtures():
         return self.__dict__
 
     def __iter__(self):
-        yield 'event_type_key', self.event_type_key
-        yield 'event_type_type', self.event_type_type
+        yield "event_type_key", self.event_type_key
+        yield "event_type_type", self.event_type_type

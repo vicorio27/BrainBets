@@ -3,8 +3,10 @@ from event import Event
 """
 Tournament
 """
-class Tournament():
-    tournament_key : str
+
+
+class Tournament:
+    tournament_key: str
     tournament_name: str
     event: Event
 
@@ -27,6 +29,6 @@ class Tournament():
         return self.__dict__
 
     def __iter__(self):
-        yield 'event_type_key', self.event_type_key
-        yield 'event_type_type', self.event_type_type
-        yield 'event', self.event.serialize()
+        yield "event_type_key", self.event_type_key
+        yield "event_type_type", self.event_type_type
+        yield "event", self.event.serialize()
