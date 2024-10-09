@@ -1,1 +1,2 @@
-BRAINBETS ALPHA
+# BrainBets API
+API BrainBets
