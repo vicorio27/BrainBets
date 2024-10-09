@@ -4,8 +4,9 @@ from dataclasses import dataclass
 Event
 """
 
+
 @dataclass
-class Response():
+class Response:
 
     success: int
     result: list[any]
