@@ -1,9 +1,6 @@
 import os
 
-RETURNING_STATES = {"OK": "OK", "FAIL": "FAIL"}
-
 TIME_ZONE = "America/New_York"
-
 
 API_TENNIS = {
     "API": "https://api.api-tennis.com/tennis/",
