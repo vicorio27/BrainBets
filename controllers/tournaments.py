@@ -2,6 +2,8 @@ import json
 
 from flask import Blueprint
 
+from ..services.apitennis.apitennis import get_tournaments
+
 tournaments_api = Blueprint("tournaments_api", __name__)
 
 
@@ -24,7 +26,7 @@ def tournaments():
                         "tournament_key": "2833",
                         "tournament_name": "Aachen",
                         "event_type_key": "281",
-                        "event_type_type": "Challenger Men Singles"
+                        "tournament["tournament_name"]": "Challenger Men Singles"
                 },
                 {
                         "tournament_key": "3872",
@@ -35,7 +37,4 @@ def tournaments():
         ]
         }
     """
-    with open("./json/tournaments.json") as f:
-        jtournament = json.load(f)
-
-        return jtournament
+    return get_tournaments()

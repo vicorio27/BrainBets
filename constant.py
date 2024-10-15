@@ -1,6 +1,7 @@
 import os
 
 TIME_ZONE = "America/New_York"
+ENVIRONMENT = (os.environ.get("ENVIRONMENT", "dev"),)
 
 API_TENNIS = {
     "API": "https://api.api-tennis.com/tennis/",

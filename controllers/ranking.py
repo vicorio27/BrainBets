@@ -1,6 +1,6 @@
-import json
-
 from flask import Blueprint
+
+from ..services.apitennis.apitennis import get_ranking
 
 ranking_api = Blueprint("ranking_api", __name__)
 
@@ -38,6 +38,4 @@ def ranking(event_type: str):
             ]
         }
     """
-    with open("./json/events.json") as f:
-        jevents = json.load(f)
-        return jevents
+    return get_ranking(event_type=event_type)

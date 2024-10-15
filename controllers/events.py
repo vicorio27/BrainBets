@@ -1,6 +1,7 @@
 import json
 
 from flask import Blueprint
+from ..services.apitennis.apitennis import get_events
 
 events_api = Blueprint("events_api", __name__)
 
@@ -33,6 +34,4 @@ def events():
             ]
         }
     """
-    with open("./json/events.json") as f:
-        jevents = json.load(f)
-        return jevents
+    return get_events()

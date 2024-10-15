@@ -2,6 +2,8 @@ import json
 
 from flask import Blueprint
 
+from ..services.apitennis.apitennis import get_H2H
+
 h2h_api = Blueprint("h2h_api", __name__)
 
 
@@ -79,6 +81,6 @@ def h2h(first_player_key: str, second_player_key: str):
           }
         }
     """
-    with open("./json/h2h.json") as f:
-        jh2h = json.load(f)
-        return jh2h
+    return get_H2H(
+        first_player_key=first_player_key, second_player_key=second_player_key
+    )
